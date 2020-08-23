@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="placeItem"
+            type="com.brownie.accessibletoasterlibrary.models.Place" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:elevation="20dp"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/holo_purple"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/place_title"
+                android:text="@{placeItem.placeName, default=place}"
+                style="@style/PlacesTitle" />
+
+            <ImageView
+                android:id="@+id/place_image"
+                app:imageResource="@{placeItem.placeImageResource}"
+                style="@style/PlacesImage" />
+
+            <TextView
+                android:id="@+id/place_description"
+                android:text="@{placeItem.placeDescription, default=place}"
+                style="@style/PlacesDescription" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
